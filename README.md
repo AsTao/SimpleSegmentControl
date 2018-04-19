@@ -3,7 +3,7 @@
 
 # Usage
 
-<img src='https://github.com/AsTao/SimpleSegmentControl/blob/master/SimpleSegmentControl.swift' width=375 />
+<img src='https://github.com/AsTao/SimpleSegmentControl/blob/master/ScreenCapture.png' width=375 />
 
 ```objc
     segmentControl.segments = ["one","two","three"]
