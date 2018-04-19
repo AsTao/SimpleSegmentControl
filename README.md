@@ -1,9 +1,20 @@
 # SimpleSegmentControl
 
-[![CI Status](http://img.shields.io/travis/ssTaoz/SimpleSegmentControl.svg?style=flat)](https://travis-ci.org/ssTaoz/SimpleSegmentControl)
-[![Version](https://img.shields.io/cocoapods/v/SimpleSegmentControl.svg?style=flat)](http://cocoapods.org/pods/SimpleSegmentControl)
-[![License](https://img.shields.io/cocoapods/l/SimpleSegmentControl.svg?style=flat)](http://cocoapods.org/pods/SimpleSegmentControl)
-[![Platform](https://img.shields.io/cocoapods/p/SimpleSegmentControl.svg?style=flat)](http://cocoapods.org/pods/SimpleSegmentControl)
+
+# Usage
+
+<img src='https://github.com/AsTao/SimpleSegmentControl/blob/master/SimpleSegmentControl.swift' width=375 />
+
+```objc
+    segmentControl.segments = ["one","two","three"]
+    segmentControl.reloadSegments()
+    segmentControl.indexChangedHandler = {   [weak self] index in
+        print(index)
+    }
+```
+
+
+
 
 ## Example
 
@@ -22,7 +33,7 @@ pod 'SimpleSegmentControl'
 
 ## Author
 
-ssTaoz, 236048180@qq.com
+tobias, 236048180@qq.com
 
 ## License
 

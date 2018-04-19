@@ -11,13 +11,20 @@ import SimpleSegmentControl
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var segmentControl: SimpleSegmentControl!
+  //  @IBOutlet weak var segmentControl: SimpleSegmentControl!
+    
+    lazy var segmentControl: SimpleSegmentControl = {
+        let control = SimpleSegmentControl(frame: CGRect(x: 0, y: 100, width: self.view.frame.width , height: 70))
+        control.backgroundColor = UIColor.white
+        return control
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        segmentControl.segments = ["第一","第二","第三"]
-        segmentControl.collectionSectionInset = UIEdgeInsetsMake(0, 50, 0, 50)
+        self.view.addSubview(segmentControl)
+        segmentControl.segments = ["one","two","three"]
+        //segmentControl.collectionSectionInset = UIEdgeInsetsMake(0, 50, 0, 50)
         segmentControl.reloadSegments()
         segmentControl.indexChangedHandler = {   [weak self] index in
             print(index)
