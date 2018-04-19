@@ -1,0 +1,22 @@
+{
+  "name": "SimpleSegmentControl",
+  "version": "0.1.0",
+  "summary": "A short description of SimpleSegmentControl.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/ssTaoz/SimpleSegmentControl",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "ssTaoz": "236048180@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/ssTaoz/SimpleSegmentControl.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "SimpleSegmentControl/Classes/**/*"
+}

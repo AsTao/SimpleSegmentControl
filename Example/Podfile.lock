@@ -1,0 +1,16 @@
+PODS:
+  - SimpleSegmentControl (0.1.0)
+
+DEPENDENCIES:
+  - SimpleSegmentControl (from `../`)
+
+EXTERNAL SOURCES:
+  SimpleSegmentControl:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SimpleSegmentControl: ebfb960631f5cc4f8782b4b97a9b6d3a45779ca6
+
+PODFILE CHECKSUM: 4160f33b425599265c9c6a02a9e736da9b9d7839
+
+COCOAPODS: 1.4.0
