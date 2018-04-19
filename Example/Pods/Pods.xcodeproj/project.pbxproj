@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0AFDE53C0B043AC487D054B83BEF56E5 /* Pods-SimpleSegmentControl_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F077FFE983F8731BAA7295E42978F8 /* Pods-SimpleSegmentControl_Example-dummy.m */; };
-		2BCDAFB5208873EE00CE5053 /* SimpleSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDAFAE2088489E00CE5053 /* SimpleSegmentControl.swift */; };
+		2BCDAFB820889EAD00CE5053 /* SimpleSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDAFB620889E8D00CE5053 /* SimpleSegmentControl.swift */; };
 		5AB99211C510E91AD91ADFA5F677B8BC /* Pods-SimpleSegmentControl_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 135677081B059FF562A223F817119FEE /* Pods-SimpleSegmentControl_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		70C8B7DE87E6586B3A08413B68C8D6FC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		7428C2BDC67C87F94087188E9150640A /* SimpleSegmentControl-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F7877D88156FCED30CCFEDE56A632C75 /* SimpleSegmentControl-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -33,7 +33,7 @@
 		135677081B059FF562A223F817119FEE /* Pods-SimpleSegmentControl_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SimpleSegmentControl_Tests-umbrella.h"; sourceTree = "<group>"; };
 		1742A73D22C0A6E6E9E8CD7C68E8FFB1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22A9A374AAF1D5FAE769DEAD990C013E /* Pods-SimpleSegmentControl_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SimpleSegmentControl_Example-umbrella.h"; sourceTree = "<group>"; };
-		2BCDAFAE2088489E00CE5053 /* SimpleSegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSegmentControl.swift; sourceTree = "<group>"; };
+		2BCDAFB620889E8D00CE5053 /* SimpleSegmentControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SimpleSegmentControl.swift; path = SimpleSegmentControl/Classes/SimpleSegmentControl.swift; sourceTree = "<group>"; };
 		334EBFD793B38E8EE26018739A0C9187 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		389B19D6A73A788D8899BB4690903556 /* Pods-SimpleSegmentControl_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SimpleSegmentControl_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		3F2B14804961B1E9F84DA22B98BCF37C /* Pods-SimpleSegmentControl_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SimpleSegmentControl_Example-frameworks.sh"; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 		74AD7B1EECE22897790217449AC2C5C6 /* SimpleSegmentControl */ = {
 			isa = PBXGroup;
 			children = (
-				2BCDAFAE2088489E00CE5053 /* SimpleSegmentControl.swift */,
+				2BCDAFB620889E8D00CE5053 /* SimpleSegmentControl.swift */,
 				030FDBC2C340888703A15192C5FBA3A7 /* Pod */,
 				3CDB87885CD58AFFAE91913DCAF893EA /* Support Files */,
 			);
@@ -349,7 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93B94BF02C99DCC1203F6D348D4CD489 /* SimpleSegmentControl-dummy.m in Sources */,
-				2BCDAFB5208873EE00CE5053 /* SimpleSegmentControl.swift in Sources */,
+				2BCDAFB820889EAD00CE5053 /* SimpleSegmentControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

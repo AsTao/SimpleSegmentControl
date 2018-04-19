@@ -46,10 +46,10 @@ public class SimpleSegmentControl: UIView {
     
     
     
-    private var indicatorWidth :CGFloat{
+    fileprivate var indicatorWidth :CGFloat{
         return (self.frame.width - collectionSectionInset.left - collectionSectionInset.right)/CGFloat(segments.count)
     }
-    private var collectionHeight :CGFloat{
+    fileprivate var collectionHeight :CGFloat{
         return self.frame.height - indicatorHeight
     }
    
