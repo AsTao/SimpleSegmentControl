@@ -9,25 +9,25 @@ import UIKit
 
 public class SimpleSegmentControl: UIView {
 
-    public var segments :[String] = []
-    public var indexChangedHandler: ((_ index: Int) -> (Swift.Void))?
-    public var indicatorHeight :CGFloat = 3
-    public var indicatorColor :UIColor = UIColor(red: 146/255.0, green: 59/255.0, blue: 1, alpha: 1)
-    public var indicatorBakcgroundColor :UIColor = UIColor(red: 223/255.0, green: 223/255.0, blue: 223/255.0, alpha: 1)
-    public var collectionSectionInset :UIEdgeInsets = UIEdgeInsets.zero
+    @objc public var segments :[String] = []
+    @objc public var indexChangedHandler: ((_ index: Int) -> (Swift.Void))?
+    @objc public var indicatorHeight :CGFloat = 3
+    @objc public var indicatorColor :UIColor = UIColor(red: 146/255.0, green: 59/255.0, blue: 1, alpha: 1)
+    @objc public var indicatorBakcgroundColor :UIColor = UIColor(red: 223/255.0, green: 223/255.0, blue: 223/255.0, alpha: 1)
+    @objc public var collectionSectionInset :UIEdgeInsets = UIEdgeInsets.zero
 
-    public var titleLabelFont :UIFont = UIFont.systemFont(ofSize: 13)
-    public var titleLabelColor :UIColor = UIColor(red: 102/255.0, green: 107/255.0, blue: 108/255.0, alpha: 1)
-    public var titleLabelHighlightedColor :UIColor = UIColor(red: 146/255.0, green: 59/255.0, blue: 1, alpha: 1)
+    @objc public var titleLabelFont :UIFont = UIFont.systemFont(ofSize: 13)
+    @objc public var titleLabelColor :UIColor = UIColor(red: 102/255.0, green: 107/255.0, blue: 108/255.0, alpha: 1)
+    @objc public var titleLabelHighlightedColor :UIColor = UIColor(red: 146/255.0, green: 59/255.0, blue: 1, alpha: 1)
     
-    public var selectedSegmentIndex :Int = 0 {
+    @objc public var selectedSegmentIndex :Int = 0 {
         didSet{
             self.indicatorOffsetX = self.collectionSectionInset.left + CGFloat(selectedSegmentIndex) * indicatorWidth
             indexChangedHandler?(selectedSegmentIndex)
         }
     }
     
-    public var indicatorOffsetX :CGFloat = 0{
+    @objc public var indicatorOffsetX :CGFloat = 0{
         didSet{
             UIView.animate(withDuration: 0.25) {
                 self.indicator.frame = CGRect(x: self.indicatorOffsetX, y: self.collectionHeight, width: self.indicatorWidth, height: self.indicatorHeight)
@@ -35,7 +35,7 @@ public class SimpleSegmentControl: UIView {
         }
     }
     
-    public func reloadSegments(){
+    @objc public func reloadSegments(){
         guard segments.count > 0 else {return}
         self.indicator.backgroundColor = indicatorColor
         self.trackLine.backgroundColor = indicatorBakcgroundColor
@@ -112,24 +112,27 @@ public class SimpleSegmentControl: UIView {
     
 }
 
-extension SimpleSegmentControl :UICollectionViewDataSource{
+extension SimpleSegmentControl :UICollectionViewDelegate{
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.selectedSegmentIndex = indexPath.row
     }
 }
 
-extension SimpleSegmentControl :UICollectionViewDelegate{
+extension SimpleSegmentControl :UICollectionViewDataSource{
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
         return segments.count
     }
  
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SimpSegmentCell", for: indexPath) as! SimpSegmentCell
-        cell.titleLabel.text = segments[indexPath.row]
-        cell.titleLabel.font = titleLabelFont
-        cell.titleLabel.textColor = titleLabelColor
-        cell.titleLabel.highlightedTextColor = titleLabelHighlightedColor
         return cell
+    }
+    public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let acell = cell as! SimpSegmentCell
+        acell.titleLabel.text = segments[indexPath.row]
+        acell.titleLabel.font = titleLabelFont
+        acell.titleLabel.textColor = titleLabelColor
+        acell.titleLabel.highlightedTextColor = titleLabelHighlightedColor
     }
 }
 
