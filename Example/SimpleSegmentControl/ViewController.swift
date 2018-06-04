@@ -34,6 +34,10 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func buttonAction(_ sender: UIButton) {
+        print(sender.tag)
+        segmentControl.selectedSegmentIndex = sender.tag
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

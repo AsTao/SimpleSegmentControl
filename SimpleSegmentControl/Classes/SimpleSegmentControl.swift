@@ -23,6 +23,7 @@ public class SimpleSegmentControl: UIView {
     @objc public var selectedSegmentIndex :Int = 0 {
         didSet{
             self.indicatorOffsetX = self.collectionSectionInset.left + CGFloat(selectedSegmentIndex) * indicatorWidth
+            self.segmentCollection.selectItem(at: IndexPath(item: selectedSegmentIndex, section: 0), animated: true, scrollPosition: .top)
             indexChangedHandler?(selectedSegmentIndex)
         }
     }
