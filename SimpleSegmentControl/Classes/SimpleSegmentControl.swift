@@ -30,9 +30,14 @@ public class SimpleSegmentControl: UIView {
     
     @objc public var indicatorOffsetX :CGFloat = 0{
         didSet{
-            UIView.animate(withDuration: 0.25) {
-                self.indicator.frame = CGRect(x: self.indicatorOffsetX, y: self.collectionHeight, width: self.indicatorWidth, height: self.indicatorHeight)
-            }
+            let x = self.indicatorOffsetX + self.collectionSectionInset.left
+            UIView.animate(withDuration: 0.25, animations: {
+                self.indicator.frame = CGRect(x: x, y: self.collectionHeight, width: self.indicatorWidth, height: self.indicatorHeight)
+            }, completion: { finish in
+                let index = Int(floorf(Float(self.indicatorOffsetX/self.indicatorWidth)))
+                self.segmentCollection.selectItem(at: IndexPath(item: index, section: 0), animated: true, scrollPosition: .top)
+            })
+         
         }
     }
     

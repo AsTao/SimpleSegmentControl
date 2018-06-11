@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D03E60E70352B380208C872 /* Pods_SimpleSegmentControl_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51F390FDAA9B023B98158227 /* Pods_SimpleSegmentControl_Example.framework */; };
 		2B59D4C4209C566E00FC5E88 /* OCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B59D4C3209C566E00FC5E88 /* OCTest.m */; };
+		2B6EB87820CE7C0400E54A2D /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6EB87720CE7C0400E54A2D /* DemoViewController.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		2B59D4C1209C566E00FC5E88 /* SimpleSegmentControl_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleSegmentControl_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		2B59D4C2209C566E00FC5E88 /* OCTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCTest.h; sourceTree = "<group>"; };
 		2B59D4C3209C566E00FC5E88 /* OCTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCTest.m; sourceTree = "<group>"; };
+		2B6EB87720CE7C0400E54A2D /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		51F390FDAA9B023B98158227 /* Pods_SimpleSegmentControl_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleSegmentControl_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E78955A22072917E4D280FB /* Pods-SimpleSegmentControl_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleSegmentControl_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleSegmentControl_Tests/Pods-SimpleSegmentControl_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* SimpleSegmentControl_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleSegmentControl_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +90,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				2B6EB87720CE7C0400E54A2D /* DemoViewController.swift */,
 				2B59D4C2209C566E00FC5E88 /* OCTest.h */,
 				2B59D4C3209C566E00FC5E88 /* OCTest.m */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -276,6 +279,7 @@
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				2B59D4C4209C566E00FC5E88 /* OCTest.m in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				2B6EB87820CE7C0400E54A2D /* DemoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
