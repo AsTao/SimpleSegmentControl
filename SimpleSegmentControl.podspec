@@ -32,11 +32,5 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'SimpleSegmentControl/Classes/**/*'
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.1' }
-  # s.resource_bundles = {
-  #   'SimpleSegmentControl' => ['SimpleSegmentControl/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.swift_version = '4.1'
 end
