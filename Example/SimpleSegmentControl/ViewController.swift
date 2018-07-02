@@ -25,6 +25,8 @@ class ViewController: UIViewController {
         self.view.addSubview(segmentControl)
         segmentControl.segments = ["one","two","three"]
         //segmentControl.collectionSectionInset = UIEdgeInsetsMake(0, 50, 0, 50)
+        
+        segmentControl.indicatorInsets = UIEdgeInsetsMake(0, 20, 0, 20)
         segmentControl.reloadSegments()
         segmentControl.indexChangedHandler = {   [weak self] index in
             print(index)

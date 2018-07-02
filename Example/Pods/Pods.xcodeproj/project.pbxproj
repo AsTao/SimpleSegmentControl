@@ -312,7 +312,7 @@
 				LastUpgradeCheck = 0930;
 				TargetAttributes = {
 					0350280F915E7BF0CB7C58552E0DC485 = {
-						LastSwiftMigration = 0930;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
