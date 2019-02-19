@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SimpleSegmentControl'
-  s.version          = '1.0.6'
+  s.version          = '1.0.7'
   s.summary          = 'A short description of SimpleSegmentControl.'
 
 # This description is used to generate tags and improve search results.
@@ -31,6 +31,6 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'SimpleSegmentControl/Classes/**/*'
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.1' }
-  s.swift_version = '4.1'
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.2' }
+  s.swift_version = '4.2'
 end
