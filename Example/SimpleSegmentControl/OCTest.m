@@ -16,7 +16,7 @@
     control.backgroundColor = [UIColor whiteColor];
     __weak typeof(self) weakSelf = self;
     control.indexChangedHandler = ^(NSInteger index) {
-        
+    
     };
 }
 @end
