@@ -23,13 +23,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(segmentControl)
-        segmentControl.segments = ["one","two","three"]
+        segmentControl.segments = ["one","two","three","four","five"]
         //segmentControl.collectionSectionInset = UIEdgeInsetsMake(0, 50, 0, 50)
         
-        segmentControl.indicatorInsets = UIEdgeInsets.init(top: 0, left: 20, bottom: 0, right: 20)
+        //segmentControl.indicatorInsets = UIEdgeInsets.init(top: 0, left: 40, bottom: 0, right: 40)
+        segmentControl.collectionSectionInset = UIEdgeInsets.init(top: 0, left: 40, bottom: 0, right: 40)
         segmentControl.reloadSegments()
         segmentControl.indexChangedHandler = {   [weak self] index in
-            print(index)
+            //print(index)
         }
         
  
@@ -37,8 +38,8 @@ class ViewController: UIViewController {
     
     
     @IBAction func buttonAction(_ sender: UIButton) {
-        print(sender.tag)
-        segmentControl.selectedSegmentIndex = sender.tag
+       // print(sender.tag)
+        segmentControl.selectedSegmentIndex = sender.tag + 1
     }
     
     override func didReceiveMemoryWarning() {

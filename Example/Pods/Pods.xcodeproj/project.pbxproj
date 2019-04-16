@@ -9,10 +9,7 @@
 /* Begin PBXBuildFile section */
 		0AFDE53C0B043AC487D054B83BEF56E5 /* Pods-SimpleSegmentControl_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F077FFE983F8731BAA7295E42978F8 /* Pods-SimpleSegmentControl_Example-dummy.m */; };
 		2BCDAFB820889EAD00CE5053 /* SimpleSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDAFB620889E8D00CE5053 /* SimpleSegmentControl.swift */; };
-		5AB99211C510E91AD91ADFA5F677B8BC /* Pods-SimpleSegmentControl_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 135677081B059FF562A223F817119FEE /* Pods-SimpleSegmentControl_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		70C8B7DE87E6586B3A08413B68C8D6FC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		7428C2BDC67C87F94087188E9150640A /* SimpleSegmentControl-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F7877D88156FCED30CCFEDE56A632C75 /* SimpleSegmentControl-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7AD797FF3DCD5A726F4E3434E6E28317 /* Pods-SimpleSegmentControl_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 59025450ADD0D4498E30E90862D9F768 /* Pods-SimpleSegmentControl_Tests-dummy.m */; };
 		88CB137526CD83A6FC2CFBFDEE49DA1F /* Pods-SimpleSegmentControl_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 22A9A374AAF1D5FAE769DEAD990C013E /* Pods-SimpleSegmentControl_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93B94BF02C99DCC1203F6D348D4CD489 /* SimpleSegmentControl-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C51456B2EAAA5B17F81887EBC7816C /* SimpleSegmentControl-dummy.m */; };
 		A00E27156D5466041B7B05A0824C51CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
@@ -37,7 +34,6 @@
 		334EBFD793B38E8EE26018739A0C9187 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		389B19D6A73A788D8899BB4690903556 /* Pods-SimpleSegmentControl_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SimpleSegmentControl_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		3F2B14804961B1E9F84DA22B98BCF37C /* Pods-SimpleSegmentControl_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SimpleSegmentControl_Example-frameworks.sh"; sourceTree = "<group>"; };
-		41B54CBC48D28DD52D55EE287A7DCD80 /* Pods_SimpleSegmentControl_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleSegmentControl_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4497ACBE3F3A212ABFCF923077185304 /* Pods-SimpleSegmentControl_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SimpleSegmentControl_Tests.modulemap"; sourceTree = "<group>"; };
 		47FA011F525A1304AF925B8343B96D22 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		49CA7805B24B641019B82FA0690D64C5 /* Pods-SimpleSegmentControl_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SimpleSegmentControl_Example-resources.sh"; sourceTree = "<group>"; };
@@ -73,14 +69,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A00E27156D5466041B7B05A0824C51CD /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A149457548E46D9FB5A6540EF017FC47 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				70C8B7DE87E6586B3A08413B68C8D6FC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,7 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				BE20A9AFAB0CA80A08FF162B4DACDBD8 /* Pods_SimpleSegmentControl_Example.framework */,
-				41B54CBC48D28DD52D55EE287A7DCD80 /* Pods_SimpleSegmentControl_Tests.framework */,
 				E2C89D83C19FDE754D868517C42EB0AB /* SimpleSegmentControl.framework */,
 			);
 			name = Products;
@@ -228,14 +215,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7428C2BDC67C87F94087188E9150640A /* SimpleSegmentControl-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A9AB7FFA71133A73EF82B741E3AE3590 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5AB99211C510E91AD91ADFA5F677B8BC /* Pods-SimpleSegmentControl_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,23 +264,6 @@
 			productReference = E2C89D83C19FDE754D868517C42EB0AB /* SimpleSegmentControl.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		AA9C5CB761D4D92E563BDEDEAD029DF7 /* Pods-SimpleSegmentControl_Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C6E3A83ADC80F43FF000CAE6FE034C3D /* Build configuration list for PBXNativeTarget "Pods-SimpleSegmentControl_Tests" */;
-			buildPhases = (
-				CEC1BE09A8332D0F1A463258D27F6137 /* Sources */,
-				A149457548E46D9FB5A6540EF017FC47 /* Frameworks */,
-				A9AB7FFA71133A73EF82B741E3AE3590 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-SimpleSegmentControl_Tests";
-			productName = "Pods-SimpleSegmentControl_Tests";
-			productReference = 41B54CBC48D28DD52D55EE287A7DCD80 /* Pods_SimpleSegmentControl_Tests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -309,22 +271,23 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1020;
 				TargetAttributes = {
 					0350280F915E7BF0CB7C58552E0DC485 = {
 						LastSwiftMigration = 0940;
 					};
 					81BBD5BC01E69D3E93F1EC94B40423E8 = {
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
 			productRefGroup = 96BA7FA28441C94120A689119E02BEF6 /* Products */;
@@ -332,7 +295,6 @@
 			projectRoot = "";
 			targets = (
 				0350280F915E7BF0CB7C58552E0DC485 /* Pods-SimpleSegmentControl_Example */,
-				AA9C5CB761D4D92E563BDEDEAD029DF7 /* Pods-SimpleSegmentControl_Tests */,
 				81BBD5BC01E69D3E93F1EC94B40423E8 /* SimpleSegmentControl */,
 			);
 		};
@@ -356,14 +318,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CEC1BE09A8332D0F1A463258D27F6137 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7AD797FF3DCD5A726F4E3434E6E28317 /* Pods-SimpleSegmentControl_Tests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -376,43 +330,11 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		4B85187E681A1E7CC416B1B657C930D0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E488719DF9769059C10D2EA616DE34EB /* Pods-SimpleSegmentControl_Tests.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SimpleSegmentControl_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SimpleSegmentControl_Tests/Pods-SimpleSegmentControl_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_SimpleSegmentControl_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		5011B865762FC0C0A28ECEC4CB63DC68 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -468,40 +390,8 @@
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Debug;
-		};
-		80A5A0CDF42F6274654E082F02ACD7C5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 389B19D6A73A788D8899BB4690903556 /* Pods-SimpleSegmentControl_Tests.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SimpleSegmentControl_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SimpleSegmentControl_Tests/Pods-SimpleSegmentControl_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_SimpleSegmentControl_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
@@ -509,6 +399,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -560,7 +451,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
@@ -661,7 +552,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -692,7 +583,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -726,15 +617,6 @@
 			buildConfigurations = (
 				F0FE531E6A46CEF34B72624CCCEFD74A /* Debug */,
 				F15981AEAF01A93AA16AC1FA3DBF9100 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C6E3A83ADC80F43FF000CAE6FE034C3D /* Build configuration list for PBXNativeTarget "Pods-SimpleSegmentControl_Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				80A5A0CDF42F6274654E082F02ACD7C5 /* Debug */,
-				4B85187E681A1E7CC416B1B657C930D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

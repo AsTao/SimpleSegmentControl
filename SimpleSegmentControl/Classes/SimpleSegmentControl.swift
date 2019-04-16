@@ -11,10 +11,12 @@ public class SimpleSegmentControl: UIView {
 
     @objc public var segments :[String] = []
     @objc public var indexChangedHandler: ((_ index: Int) -> (Swift.Void))?
+    
+    @objc public var indicatorWidth :CGFloat = 0
     @objc public var indicatorHeight :CGFloat = 3
     @objc public var indicatorColor :UIColor = UIColor(red: 146/255.0, green: 59/255.0, blue: 1, alpha: 1)
     @objc public var indicatorBakcgroundColor :UIColor = UIColor(red: 223/255.0, green: 223/255.0, blue: 223/255.0, alpha: 1)
-    @objc public var indicatorInsets :UIEdgeInsets = UIEdgeInsets.zero
+    
     @objc public var collectionSectionInset :UIEdgeInsets = UIEdgeInsets.zero
     
 
@@ -24,7 +26,7 @@ public class SimpleSegmentControl: UIView {
     
     @objc public var selectedSegmentIndex :Int = 0 {
         didSet{
-            self.indicatorOffsetX = self.collectionSectionInset.left + CGFloat(selectedSegmentIndex) * indicatorWidth
+            self.indicatorOffsetX =  CGFloat(selectedSegmentIndex) * collectionItemWidth + (collectionItemWidth - indicatorWidth)/2
             self.segmentCollection.selectItem(at: IndexPath(item: selectedSegmentIndex, section: 0), animated: true, scrollPosition: .top)
             indexChangedHandler?(selectedSegmentIndex)
         }
@@ -36,28 +38,31 @@ public class SimpleSegmentControl: UIView {
             UIView.animate(withDuration: 0.25, animations: {
                 self.indicator.frame = CGRect(x: x, y: self.collectionHeight, width: self.indicatorWidth, height: self.indicatorHeight)
             }, completion: { finish in
-                let index = Int(floorf(Float(self.indicatorOffsetX/self.indicatorWidth)))
-                self.segmentCollection.selectItem(at: IndexPath(item: index, section: 0), animated: true, scrollPosition: .top)
+                let n = (self.indicatorOffsetX - (self.collectionItemWidth - self.indicatorWidth)/2)/self.collectionItemWidth
+                self.segmentCollection.selectItem(at: IndexPath(item: Int(floor(n)), section: 0), animated: true, scrollPosition: .top)
             })
-         
         }
     }
     
     @objc public func reloadSegments(){
         guard segments.count > 0 else {return}
-        self.indicator.indicatorInsets = indicatorInsets
-        self.indicator.indicator.backgroundColor = indicatorColor
+        if indicatorWidth == 0 {
+            let text = segments.first ?? ""
+            let boundingBox = text.boundingRect(with: CGSize(width: 300, height: 20), options: .usesLineFragmentOrigin, attributes: [.font: titleLabelFont], context: nil)
+            self.indicatorWidth = ceil(boundingBox.width)
+        }
+        self.indicator.backgroundColor = indicatorColor
         self.trackLine.backgroundColor = indicatorBakcgroundColor
+        
+        self.collectionItemWidth = (self.frame.width - collectionSectionInset.left - collectionSectionInset.right)/CGFloat(segments.count)
+        self.indicatorOffsetX = (collectionItemWidth - indicatorWidth)/2
         self.segmentCollection.reloadData()
         self.segmentCollection.backgroundColor = self.backgroundColor
         self.segmentCollection.selectItem(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: .top)
     }
     
+    fileprivate var collectionItemWidth :CGFloat = 0
     
-    
-    public var indicatorWidth :CGFloat{
-        return (self.frame.width - collectionSectionInset.left - collectionSectionInset.right)/CGFloat(segments.count)
-    }
     fileprivate var collectionHeight :CGFloat{
         return self.frame.height - indicatorHeight
     }
@@ -88,11 +93,11 @@ public class SimpleSegmentControl: UIView {
         super.layoutSubviews()
         self.segmentCollection.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: collectionHeight)
         self.trackLine.frame = CGRect(x: 0, y: collectionHeight, width: self.frame.width, height: indicatorHeight)
-        self.indicator.frame = CGRect(x: collectionSectionInset.left, y: collectionHeight, width: indicatorWidth, height: indicatorHeight)
+      //  self.indicator.frame = CGRect(x: collectionSectionInset.left, y: collectionHeight, width: indicatorWidth, height: indicatorHeight)
     }
     
-    private lazy var indicator :SimpleIndicatorView = {
-        let view = SimpleIndicatorView(frame: CGRect.zero, insets: indicatorInsets)
+    private lazy var indicator :UIView = {
+        let view = UIView(frame: CGRect.zero)
         view.isUserInteractionEnabled = false
         return view;
     }()
@@ -142,12 +147,13 @@ extension SimpleSegmentControl :UICollectionViewDataSource{
         acell.titleLabel.font = titleLabelFont
         acell.titleLabel.textColor = titleLabelColor
         acell.titleLabel.highlightedTextColor = titleLabelHighlightedColor
+        acell.backgroundColor = UIColor.red
     }
 }
 
 extension SimpleSegmentControl :UICollectionViewDelegateFlowLayout{
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
-        return CGSize(width: indicatorWidth, height: collectionView.frame.height)
+        return CGSize(width: collectionItemWidth, height: collectionView.frame.height)
     }
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets{
         return collectionSectionInset
@@ -178,39 +184,6 @@ class SimpSegmentCell: UICollectionViewCell {
     }
 }
 
-fileprivate class SimpleIndicatorView: UIView {
-    var indicatorInsets :UIEdgeInsets = UIEdgeInsets.zero{
-        didSet{
-            self.indicator.frame = CGRect(x: indicatorInsets.left, y: 0, width: frame.width-indicatorInsets.left-indicatorInsets.right, height: frame.height)
-        }
-    }
-    fileprivate init(frame: CGRect, insets :UIEdgeInsets) {
-        super.init(frame: frame)
-        self.indicatorInsets = insets
-        self.backgroundColor = UIColor.clear
-        self.indicator.frame = CGRect(x: insets.left, y: 0, width: frame.width-insets.left-insets.right, height: frame.height)
-        self.addSubview(indicator)
-    }
-    
-    public override func layoutSubviews() {
-        super.layoutSubviews()
-        self.indicator.frame = CGRect(x: indicatorInsets.left, y: 0, width: frame.width-indicatorInsets.left-indicatorInsets.right, height: frame.height)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    
-    fileprivate lazy var indicator :UIView = {
-        let view = UIView(frame: CGRect.zero)
-        view.isUserInteractionEnabled = false
-        return view;
-    }()
-    
-    
-    
-    
-}
+
 
 
