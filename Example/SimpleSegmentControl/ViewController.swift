@@ -27,6 +27,7 @@ class ViewController: UIViewController {
         //segmentControl.collectionSectionInset = UIEdgeInsetsMake(0, 50, 0, 50)
         
         //segmentControl.indicatorInsets = UIEdgeInsets.init(top: 0, left: 40, bottom: 0, right: 40)
+        segmentControl.indicatorOriginY = 50
         segmentControl.collectionSectionInset = UIEdgeInsets.init(top: 0, left: 40, bottom: 0, right: 40)
         segmentControl.reloadSegments()
         segmentControl.indexChangedHandler = {   [weak self] index in

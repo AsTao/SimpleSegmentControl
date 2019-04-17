@@ -14,6 +14,7 @@ public class SimpleSegmentControl: UIView {
     
     @objc public var indicatorWidth :CGFloat = 0
     @objc public var indicatorHeight :CGFloat = 3
+    @objc public var indicatorOriginY :CGFloat = 0
     @objc public var indicatorColor :UIColor = UIColor(red: 146/255.0, green: 59/255.0, blue: 1, alpha: 1)
     @objc public var indicatorBakcgroundColor :UIColor = UIColor(red: 223/255.0, green: 223/255.0, blue: 223/255.0, alpha: 1)
     
@@ -36,7 +37,7 @@ public class SimpleSegmentControl: UIView {
         didSet{
             let x = self.indicatorOffsetX + self.collectionSectionInset.left
             UIView.animate(withDuration: 0.25, animations: {
-                self.indicator.frame = CGRect(x: x, y: self.collectionHeight, width: self.indicatorWidth, height: self.indicatorHeight)
+                self.indicator.frame = CGRect(x: x, y: self.indicatorOriginY, width: self.indicatorWidth, height: self.indicatorHeight)
             }, completion: { finish in
                 let n = (self.indicatorOffsetX - (self.collectionItemWidth - self.indicatorWidth)/2)/self.collectionItemWidth
                 self.segmentCollection.selectItem(at: IndexPath(item: Int(floor(n)), section: 0), animated: true, scrollPosition: .top)
@@ -50,6 +51,9 @@ public class SimpleSegmentControl: UIView {
             let text = segments.first ?? ""
             let boundingBox = text.boundingRect(with: CGSize(width: 300, height: 20), options: .usesLineFragmentOrigin, attributes: [.font: titleLabelFont], context: nil)
             self.indicatorWidth = ceil(boundingBox.width)
+        }
+        if indicatorOriginY == 0 {
+            self.indicatorOriginY = collectionHeight
         }
         self.indicator.backgroundColor = indicatorColor
         self.trackLine.backgroundColor = indicatorBakcgroundColor
@@ -93,7 +97,6 @@ public class SimpleSegmentControl: UIView {
         super.layoutSubviews()
         self.segmentCollection.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: collectionHeight)
         self.trackLine.frame = CGRect(x: 0, y: collectionHeight, width: self.frame.width, height: indicatorHeight)
-      //  self.indicator.frame = CGRect(x: collectionSectionInset.left, y: collectionHeight, width: indicatorWidth, height: indicatorHeight)
     }
     
     private lazy var indicator :UIView = {
@@ -147,7 +150,6 @@ extension SimpleSegmentControl :UICollectionViewDataSource{
         acell.titleLabel.font = titleLabelFont
         acell.titleLabel.textColor = titleLabelColor
         acell.titleLabel.highlightedTextColor = titleLabelHighlightedColor
-        acell.backgroundColor = UIColor.red
     }
 }
 
